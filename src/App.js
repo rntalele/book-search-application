@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import BookHome from './BookHome';
+import BookHome from './components/BookHome';
 function App() {
   return (
     <>
