@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Card from './Card';
 import BookDetails from './BookDetails';
+import Loader from './Loader';
 
 const BookHome = () => {
     const [bookKeyword, setBookKeyword] = useState("");
@@ -33,11 +34,7 @@ const BookHome = () => {
 
     return (
         <div className="container">
-            {loading ? (
-                <h1>Loading...</h1>
-            ) : (
-                <p></p>
-            )}
+
 
             <div className="row">
                 <div className="input-group mb-3">
@@ -47,18 +44,25 @@ const BookHome = () => {
                     </div>
                 </div>
             </div>
+            {loading ? (
+                // <h1>Loading...</h1>
+                <Loader className='mt-5 mb-5 pt-5 pb-5' />
 
-            <div className="row pb-5 mb-4">
-                {
-                    books.map(book => {
-                        return (
+            ) : (
+                <div className="row pb-5 mb-4">
+                    {
+                        books.map(book => {
+                            return (
 
-                            <Card book={book} key={book.id} />
+                                <Card book={book} key={book.id} />
 
-                        )
-                    })
-                }
-            </div>
+                            )
+                        })
+                    }
+                </div>
+            )}
+
+
 
         </div>
 
