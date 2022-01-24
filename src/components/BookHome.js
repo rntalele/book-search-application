@@ -23,15 +23,11 @@ const BookHome = () => {
   return (
       <div className="container">
 
-            <div className="row mb-2">
-                <h1 className="text-center">Book Search</h1>
-            </div>
-
             <div className="row">
                 <div className="input-group mb-3">
                         <input type="text" className="form-control" placeholder="Enter any Keyword" onChange={(e)=>setBookKeyword(e.target.value)}/>
                         <div className="input-group-append">
-                            <button className="btn btn-outline-primary" type="button" onClick={(e)=>onButtonClick(e)}>Search</button>
+                            <button className="btn btn-outline-primary" type="button" onClick={(e)=>onButtonClick(e)}><i class="fa fa-search" aria-hidden="true"></i>Search</button>
                         </div>
                 </div>
             </div>
@@ -42,7 +38,7 @@ const BookHome = () => {
                         return (
                             
                                 <Card book={book} key={book.id}/>
-                                
+
                         )
                     })
                 }

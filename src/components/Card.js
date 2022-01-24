@@ -6,7 +6,7 @@ import Star from './Star';
 
 const Card = ({book}) => {
   return (
-    <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">
+    <div className="col-lg-3 col-md-6 mb-4 mb-lg-2 custom-card">
         <div className="card rounded shadow-sm border-0">
             <div className="card-body p-4">
               <div className="ratio ratio-1x1">
@@ -16,7 +16,7 @@ const Card = ({book}) => {
                   {book.volumeInfo.title}
               </ShowMoreText>
               <ShowMoreText lines={3} more="show more" less="show less" className="desc">
-                  {book.volumeInfo.description}
+                  {book.volumeInfo.description || "Description unavailable"}
               </ShowMoreText>
             
               <Star rating={book.volumeInfo.averageRating || 0} ratingCount={book.volumeInfo.ratingsCount || 0}/>
