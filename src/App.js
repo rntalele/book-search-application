@@ -2,11 +2,20 @@
 import './App.css';
 import BookHome from './components/BookHome';
 import Header from './components/Header';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import BookDetails from './components/BookDetails';
 function App() {
   return (
     <>
-      <Header/>
-      <BookHome/>
+      <Router>
+        <Header />
+        <Routes>
+          <Route exact path="" element={<BookHome />} />
+          <Route path="bookdetail/:id" element={<BookDetails book="hello" />} />
+          <Route path="*" element={<BookHome />} />
+        </Routes>
+
+      </Router>
     </>
   );
 }
